@@ -16,7 +16,7 @@ docker-compose up
 
 4. Install packages locally with `yarn install`
 
-5. Run `husky install`, this makes so prettier is executed before commits
+5. Run `yarn husky install`, this makes so prettier is executed before commits
 
 6. Profit!
 
