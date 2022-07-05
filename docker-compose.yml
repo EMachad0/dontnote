@@ -1,10 +1,10 @@
-version: "3"
+version: '3'
 services:
   postgres:
     image: postgres
     hostname: postgres
     ports:
-      - "5432:5432"
+      - '5432:5432'
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -12,6 +12,6 @@ services:
   web:
     build: .
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
-      - ./app:/usr/src/app/app
+      - ./src:/usr/src/dontnote/src
