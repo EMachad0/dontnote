@@ -1,8 +1,3 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
 import app from "./app";
 import http from "http";
 const debug = require("debug")("dontnote:server");
@@ -11,16 +6,9 @@ const debug = require("debug")("dontnote:server");
  * Get port from environment and store in Express.
  */
 const port = normalizePort(process.env.PORT || "3000");
+
 app.set("port", port);
-
-/**
- * Create HTTP server.
- */
 const server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
 
 server.listen(port);
 server.on("error", onError);

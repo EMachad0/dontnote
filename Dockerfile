@@ -1,6 +1,6 @@
 FROM node:16.15.1
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/dontnote
 
 # Install app dependencies
 COPY package.json yarn.lock .yarnrc.yml ./
@@ -10,7 +10,7 @@ RUN yarn install
 # If you are building your code for production
 # RUN npm ci --only=production
 
-VOLUME /usr/src/app/app
+VOLUME /usr/src/dontnote/src
 
 # Bundle app source
 COPY . .
