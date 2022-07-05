@@ -1,7 +1,7 @@
 {
   "name": "igorapp",
   "version": "0.0.0",
-  "main": "app.ts",
+  "main": "src/server.ts",
   "license": "MIT",
   "scripts": {
     "build": "yarn tsc",
