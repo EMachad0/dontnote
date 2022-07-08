@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/igorapp.iml" filepath="$PROJECT_DIR$/.idea/igorapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dontnote.iml" filepath="$PROJECT_DIR$/.idea/dontnote.iml" />
     </modules>
   </component>
 </project>
