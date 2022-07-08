@@ -7,5 +7,6 @@ import users from './controllers/users'
 
 routes.get('/', index.index)
 routes.get('/users', users.index)
+routes.get('/users/add', users.add)
 
 export default routes

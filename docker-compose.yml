@@ -1,11 +1,11 @@
-version: '3'
 services:
-  postgres:
+  db:
     image: postgres
     hostname: postgres
     ports:
       - '5432:5432'
     environment:
+      POSTGRES_DB: dontnote
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
 
@@ -15,3 +15,7 @@ services:
       - '3000:3000'
     volumes:
       - ./src:/usr/src/dontnote/src
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: 'postgresql://postgres:postgres@db:5432/dontnote?schema=public'
