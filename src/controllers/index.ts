@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 
 class IndexController {
-  public async index(req: Request, res: Response): Promise<Response> {
-    return res.json('index')
+  public async index(req: Request, res: Response) {
+    res.json('index')
   }
 }
 

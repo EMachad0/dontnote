@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response, NextFunction } from 'express'
 import createError from 'http-errors'
 import logger from 'morgan'
 
@@ -26,23 +26,22 @@ class App {
   }
 
   private errors() {
-    this.express.use(function (req, res, next) {
+    this.express.use((_req: Request, _res: Response, next: NextFunction) => {
       next(createError(404))
     })
 
     // error handler
-    // TODO: look-up express error handler ts types
-    // @ts-ignore
-    // eslint-disable-next-line no-unused-vars
-    this.express.use(function (err, req, res, _) {
-      // set locals, only providing error in development
-      res.locals.message = err.message
-      res.locals.error = req.app.get('env') === 'development' ? err : {}
+    this.express.use(
+      (err: Error, req: Request, res: Response, next: NextFunction) => {
+        // set locals, only providing error in development
+        res.locals.message = err.message
+        res.locals.error = req.app.get('env') === 'development' ? err : {}
 
-      // render the error page
-      res.status(err.status || 500)
-      res.json('error')
-    })
+        // render the error page
+        res.status(500)
+        next(err)
+      }
+    )
   }
 }
 
