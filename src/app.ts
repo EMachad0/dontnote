@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express'
 import createError from 'http-errors'
 import logger from 'morgan'
 
+import { start_server } from './graphQL/server'
 import routes from './routes'
 
 class App {
@@ -10,15 +11,19 @@ class App {
   constructor() {
     this.express = express()
 
-    this.middlewares()
-    this.routes()
-    this.errors()
+    this.middlewares().finally(() => {
+      this.routes()
+      this.errors()
+    })
   }
 
-  private middlewares() {
+  private async middlewares() {
     this.express.use(logger('dev'))
     this.express.use(express.json())
     this.express.use(express.urlencoded({ extended: false }))
+
+    const apollo = await start_server()
+    this.express.use(apollo.getMiddleware())
   }
 
   private routes() {

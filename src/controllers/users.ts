@@ -1,15 +1,13 @@
 import { Request, Response, NextFunction } from 'express'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { db } from '../db'
 
 class IndexController {
   public async index(req: Request, res: Response, next: NextFunction) {
-    prisma.user.findMany().then((users) => res.json(users), next)
+    db.user.findMany().then((users) => res.json(users), next)
   }
 
   public async add(req: Request, res: Response, next: NextFunction) {
-    await prisma.user
+    await db.user
       .create({
         data: {
           name: 'Alice',
