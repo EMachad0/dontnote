@@ -4,7 +4,7 @@
   "main": "src/server.ts",
   "license": "MIT",
   "scripts": {
-    "build": "yarn tsc",
+    "build": "sucrase ./src -d ./dist --transforms typescript",
     "start": "sucrase-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.ts"

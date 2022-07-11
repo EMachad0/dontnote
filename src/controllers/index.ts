@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 
 class IndexController {
   public async index(req: Request, res: Response) {
-    res.json('index')
+    res.send('index')
   }
 }
 
