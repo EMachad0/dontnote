@@ -1,7 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express'
 import createError from 'http-errors'
 import logger from 'morgan'
-
 import { start_server } from './graphQL/server'
 import routes from './routes'
 

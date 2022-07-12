@@ -19,4 +19,4 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: 'postgresql://postgres:postgres@db:5432/dontnote?schema=public'
+      DATABASE_URL: 'postgresql://postgres:postgres@db:5432/dontnote?builder=public'
