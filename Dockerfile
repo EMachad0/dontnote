@@ -20,9 +20,6 @@ VOLUME /usr/src/dontnote/src
 # Prisma
 RUN yarn prisma generate
 
-# Nexus
-VOLUME /usr/src/dontnote/generated
-
 # Build and Run
 RUN yarn build
 CMD yarn run dev

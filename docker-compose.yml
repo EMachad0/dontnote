@@ -15,7 +15,6 @@ services:
       - '3000:3000'
     volumes:
       - ./src:/usr/src/dontnote/src
-      - ./generated:/usr/src/dontnote/generated
     depends_on:
       - db
     environment:
