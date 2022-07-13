@@ -1,2 +1,5 @@
 import './workspace.type'
 import './workspaces.query'
+import './createWorkspace.mutation'
+import './connectUser.mutation'
+import './disconnectUser.mutation'

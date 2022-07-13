@@ -22,6 +22,7 @@ builder.mutationField('createUser', (t) => {
           email: args.input.email,
           password: args.input.password,
         },
+        ...query,
       })
     },
   })
