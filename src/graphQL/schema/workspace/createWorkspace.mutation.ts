@@ -1,14 +1,11 @@
 import { builder } from '../../builder'
 import { db } from '../../../db'
-import { UserIdInput } from '../user/user.input'
+import { idInput } from '../misc/input'
 
-const WorkspaceCreationInput = builder.inputType('WorkspaceCreationInput', {
+const CreateWorkspaceInput = builder.inputType('CreateWorkspaceInput', {
   fields: (t) => ({
     title: t.string({ required: true }),
-    users: t.field({
-      type: [UserIdInput],
-      required: true,
-    }),
+    users: t.field({ type: [idInput], required: true }),
   }),
 })
 
@@ -16,7 +13,7 @@ builder.mutationField('createWorkspace', (t) => {
   return t.prismaField({
     type: 'Workspace',
     args: {
-      input: t.arg({ type: WorkspaceCreationInput, required: true }),
+      input: t.arg({ type: CreateWorkspaceInput, required: true }),
     },
     resolve: (query, _, args) => {
       return db.workspace.create({

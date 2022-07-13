@@ -1,6 +1,6 @@
 import { builder } from '../../builder'
 
-export const UserIdInput = builder.inputType('UserIdInput', {
+export const idInput = builder.inputType('idInput', {
   fields: (t) => ({
     id: t.int({ required: true }),
   }),

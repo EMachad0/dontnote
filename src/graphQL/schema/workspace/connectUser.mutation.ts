@@ -10,9 +10,7 @@ builder.mutationField('connectUser', (t) => {
     },
     resolve: (query, _, args) => {
       return db.workspace.update({
-        where: {
-          id: args.input.id,
-        },
+        where: args.input.workspace,
         data: {
           users: {
             connect: args.input.user,
