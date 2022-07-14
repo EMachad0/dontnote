@@ -45,9 +45,11 @@ model Note {
 
 model Category {
     id           Int       @id @default(autoincrement())
-    title        String    @db.VarChar(255)
+    title        String    @db.VarChar(255) @unique(sort: Asc)
     color        String    @db.VarChar(10)
     notes        Note[]
     workspace    Workspace @relation(fields: [workspace_id], references: [id])
     workspace_id Int
+
+    @@index([title], type: Hash)
 }
