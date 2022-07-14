@@ -8,8 +8,7 @@ const CreateNoteInput = builder.inputType('CreateNoteInput', {
     text: t.string({ required: true }),
     workspace: t.field({ type: idInput, required: true }),
     author: t.field({ type: idInput, required: true }),
-    // TODO: Make categories optional
-    categories: t.field({ type: [idInput], required: true }),
+    categories: t.field({ type: [idInput], required: true, defaultValue: [] }),
   }),
 })
 

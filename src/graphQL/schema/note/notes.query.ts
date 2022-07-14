@@ -1,11 +1,11 @@
 import { builder } from '../../builder'
 import { db } from '../../../db'
 
-builder.queryField('workspaces', (t) => {
+builder.queryField('notes', (t) => {
   return t.prismaField({
-    type: ['Workspace'],
+    type: ['Note'],
     resolve: (query) => {
-      return db.workspace.findMany({ ...query })
+      return db.note.findMany({ ...query })
     },
   })
 })

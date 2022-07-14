@@ -6,6 +6,6 @@ builder.prismaObject('Note', {
     text: t.exposeString('text'),
     workspace: t.relation('workspace'),
     author: t.relation('author'),
-    // categories: t.relation('categories'),
+    categories: t.relation('categories'),
   }),
 })
